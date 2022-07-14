@@ -13,8 +13,6 @@ export abstract class Item implements Comparable<Item> {
     Item.counter++;
   }
 
-  abstract use(): void;
-
   public compareTo(other: Item): number {
     if (this.value > other.value) {
       return 1;
@@ -64,6 +62,8 @@ export abstract class Item implements Comparable<Item> {
   public set weight(weight: number) {
     this.weight = weight;
   }
+  
+  abstract use(): void;
 
   public static reset() {
     Item.counter = 0;
